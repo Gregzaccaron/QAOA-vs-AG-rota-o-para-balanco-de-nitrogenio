@@ -1,0 +1,19 @@
+# Dependências da implementação
+# Instalação:  python -m pip install -r requirements.txt
+#
+# Ambiente em que os resultados publicados foram produzidos:
+#   Python 3.14.6 (Windows 10 Pro 64 bits)
+#   AMD Ryzen 9 5900XT, 16 núcleos físicos, 32 GB de RAM
+
+numpy>=2.0          # verificado em 2.5.0
+scipy>=1.14         # verificado em 1.18.0  (COBYLA e teste de Mann-Whitney)
+matplotlib>=3.9     # verificado em 3.11.0  (apenas para graficos.py)
+
+# Necessários para o QAOA. Sem eles, parametros.py, qubo_rotacao.py,
+# algoritmo_genetico.py e experimento_comparativo.py --sem-qaoa continuam
+# funcionando; qaoa_rotacao.py não.
+qiskit>=2.0         # verificado em 2.5.1
+qiskit-aer>=0.15    # verificado em 0.17.2  (simulador em C++, paralelizado)
+
+# exportar_xlsx.py não tem dependência externa: escreve o .xlsx usando
+# apenas zipfile e csv da biblioteca padrão. Não é preciso openpyxl.
